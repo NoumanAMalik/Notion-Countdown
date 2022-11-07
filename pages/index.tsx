@@ -9,7 +9,7 @@ export default function Home() {
             (document.getElementById("date") as HTMLInputElement)?.value +
             "--" +
             (document.getElementById("occasion") as HTMLInputElement)?.value;
-        router.push(`/date/${route}`);
+        router.push("/date/[countdown]", `/date/${route}`);
     };
 
     return (
