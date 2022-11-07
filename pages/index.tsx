@@ -5,9 +5,9 @@ export default function Home() {
 
     const handleClick = (e: any) => {
         const route =
-            document.getElementById("date")?.value +
+            (document.getElementById("date") as HTMLInputElement)?.value +
             "|" +
-            document.getElementById("occasion")?.value;
+            (document.getElementById("occasion") as HTMLInputElement)?.value;
         router.push(`/date/${route}`);
     };
 
