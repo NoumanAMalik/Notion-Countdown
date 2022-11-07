@@ -4,7 +4,7 @@ const CountdownPage = () => {
     const router = useRouter();
     const { countdown } = router.query;
 
-    const routeArray = String(countdown).split("|");
+    const routeArray = String(countdown).split("--");
 
     const endDate = new Date(routeArray[0] + "T00:00:00");
     const currentDate = new Date();

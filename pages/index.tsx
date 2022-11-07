@@ -7,7 +7,7 @@ export default function Home() {
     const handleClick = (e: any) => {
         const route =
             (document.getElementById("date") as HTMLInputElement)?.value +
-            "|" +
+            "--" +
             (document.getElementById("occasion") as HTMLInputElement)?.value;
         router.push(`/date/${route}`);
     };
