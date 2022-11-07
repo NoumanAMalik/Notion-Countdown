@@ -9,7 +9,7 @@ const CountdownPage = () => {
     const endDate = new Date(routeArray[0] + "T00:00:00");
     const currentDate = new Date();
 
-    const totalSeconds = (endDate - currentDate) / 1000;
+    const totalSeconds = (endDate.getTime() - currentDate.getTime()) / 1000;
 
     const days = Math.floor(totalSeconds / 3600 / 24);
     const hours = Math.floor(totalSeconds / 3600) % 24;
