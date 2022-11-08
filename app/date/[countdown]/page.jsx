@@ -1,6 +1,6 @@
 "use client";
 
-export default function Page({ params, searchParams }) {
+export default function Page({ params }) {
 
     const countdown = params.countdown;
 
