@@ -1,8 +1,8 @@
-import { useRouter } from "next/router";
+"use client";
 
-const CountdownPage = () => {
-    const router = useRouter();
-    const { countdown } = router.query;
+export default function Page({ params, searchParams }) {
+
+    const countdown = params.countdown;
 
     const routeArray = String(countdown).split("--");
 
@@ -30,6 +30,4 @@ const CountdownPage = () => {
             {seconds} seconds
         </p>
     );
-};
-
-export default CountdownPage;
+}
