@@ -1,6 +1,10 @@
 "use client";
 
-export default function Page({ params }: { params: { countdown: string } }) {
+export default function DatePage({
+    params,
+}: {
+    params: { countdown: string };
+}) {
     const countdown = params.countdown;
 
     const routeArray = String(countdown).split("--");
