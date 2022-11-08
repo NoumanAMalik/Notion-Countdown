@@ -1,7 +1,6 @@
 "use client";
 
-export default function Page({ params }) {
-
+export default function Page({ params }: { params: { countdown: string } }) {
     const countdown = params.countdown;
 
     const routeArray = String(countdown).split("--");
