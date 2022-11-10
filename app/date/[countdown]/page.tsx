@@ -28,9 +28,11 @@ export default function DatePage({
     // ];
 
     return (
-        <p>
-            {routeArray[1]} is in {days} days {hours} hours {minutes} minutes{" "}
-            {seconds} seconds
-        </p>
+        <div className="flex flex-col items-center justify-center font-bold text-2xl text-white">
+            <p>{routeArray[1]}</p>
+            <p className="font-medium">
+                {days}d {hours}h {minutes}m {seconds}s
+            </p>
+        </div>
     );
 }

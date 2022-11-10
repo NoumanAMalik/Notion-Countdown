@@ -30,25 +30,25 @@ export default function Home() {
     };
 
     return (
-        <div>
-            {/* <Head>
-                <title>Social Media Preview</title>
-                <meta property="og:url" content="your url" />
-                <meta property="og:type" content="website" />
-                <meta property="fb:app_id" content="your fb app id" />
-                <meta
-                    property="og:title"
-                    content="Social Media Preview Working?"
-                />
-                <meta name="twitter:card" content="summary" />
-                <meta
-                    property="og:description"
-                    content="Hurray!! Yes Social Media Preview is Working"
-                />
-            </Head> */}
-            <input type="date" id="date" onChange={updateRoute} />
-            <input type="text" id="occasion" onChange={updateRoute} />
+        <div className="flex flex-col items-center justify-center bg-transparent">
+            <p className="underline font-bold text-white">Enter the Date</p>
+            <input
+                className="bg-white rounded"
+                type="date"
+                id="date"
+                onChange={updateRoute}
+            />
+            <p className="underline font-bold text-white">
+                Enter the Event Name
+            </p>
+            <input
+                className="bg-white rounded"
+                type="text"
+                id="occasion"
+                onChange={updateRoute}
+            />
             <button
+                className="bg-white rounded font-bold p-1 cursor-pointer"
                 onClick={(e) => {
                     r.push(`/date/${route}`);
                     // r.push(`/date/${route}`);
