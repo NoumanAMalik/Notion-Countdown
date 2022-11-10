@@ -30,7 +30,7 @@ export default function Home() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center bg-transparent">
+        <div className="flex flex-col items-center justify-center bg-transparent space-y-2">
             <p className="underline font-bold text-white">Enter the Date</p>
             <input
                 className="bg-white rounded"

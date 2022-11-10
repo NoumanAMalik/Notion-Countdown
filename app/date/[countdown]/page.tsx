@@ -28,7 +28,7 @@ export default function DatePage({
     // ];
 
     return (
-        <div className="flex flex-col items-center justify-center font-bold text-2xl text-white">
+        <div className="flex flex-col items-center h-full justify-center font-bold text-2xl text-white">
             <p>{routeArray[1]}</p>
             <p className="font-medium">
                 {days}d {hours}h {minutes}m {seconds}s
