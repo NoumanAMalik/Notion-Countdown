@@ -36,6 +36,7 @@ export default function Home() {
                 className="bg-white rounded"
                 type="text"
                 id="occasion"
+                placeholder="Event Name Here..."
                 onChange={updateRoute}
             />
             <button
