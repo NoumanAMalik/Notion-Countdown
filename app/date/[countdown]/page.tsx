@@ -19,14 +19,6 @@ export default function DatePage({
     const minutes = Math.floor(totalSeconds / 60) % 60;
     const seconds = Math.floor(totalSeconds % 60);
 
-    // var today = new Date();
-
-    // const timeUntil: String[] = [
-    //     String(parseInt(routeArray[0]) - today.getFullYear()),
-    //     String(parseInt(routeArray[1]) - today.getMonth() - 1),
-    //     String(parseInt(routeArray[2]) - today.getDate()),
-    // ];
-
     return (
         <div className="flex flex-col items-center h-full justify-center font-bold text-2xl text-white">
             <p>{routeArray[1]}</p>

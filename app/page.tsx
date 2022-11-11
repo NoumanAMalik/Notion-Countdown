@@ -23,30 +23,43 @@ export default function Home() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center bg-transparent space-y-2">
-            <p className="underline font-bold">Enter the Date</p>
-            <input
-                className="bg-white rounded"
-                type="date"
-                id="date"
-                onChange={updateRoute}
-            />
-            <p className="underline font-bold">Enter the Event Name</p>
-            <input
-                className="bg-white rounded"
-                type="text"
-                id="occasion"
-                placeholder="Event Name Here..."
-                onChange={updateRoute}
-            />
-            <button
-                className="bg-white rounded font-bold p-1 cursor-pointer"
-                onClick={(e) => {
-                    r.push(`/date/${route}`);
-                }}
-            >
-                Submit Date
-            </button>
-        </div>
+        <>
+            <h1 className="bg-[#131313] h-[10vh] text-[#DBDBDB] font-bold text-5xl py-4 px-8 underline">
+                Notion Widget: Countdown
+            </h1>
+            <div className="flex flex-col h-[90vh] bg-[#131313] space-y-6 px-8 pt-8">
+                <div>
+                    <p className="underline font-bold text-[#DBDBDB] text-xl pb-2">
+                        Enter the Date
+                    </p>
+                    <input
+                        className="bg-[#DBDBDB] text-[#131313] rounded-lg w-48 h-8 px-2 text-xl"
+                        type="date"
+                        id="date"
+                        onChange={updateRoute}
+                    />
+                </div>
+                <div>
+                    <p className="underline font-bold text-[#DBDBDB] text-xl pb-2">
+                        Enter the Event Name
+                    </p>
+                    <input
+                        className="bg-[#DBDBDB] text-[#131313] rounded-lg w-48 h-8 px-2 text-xl"
+                        type="text"
+                        id="occasion"
+                        placeholder="Event Name Here..."
+                        onChange={updateRoute}
+                    />
+                </div>
+                <button
+                    className="bg-[#DBDBDB] text-[#131313] rounded-lg w-48 h-8 px-2 font-bold cursor-pointer text-xl"
+                    onClick={(e) => {
+                        r.push(`/date/${route}`);
+                    }}
+                >
+                    Submit Date
+                </button>
+            </div>
+        </>
     );
 }
