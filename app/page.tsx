@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Switch } from "@headlessui/react";
 
 export default function Home() {
-    const [route, setRoute] = useState("date--title");
+    const [route, setRoute] = useState("date--title--mode");
+    const [enabled, setEnabled] = useState(true);
     const r = useRouter();
 
     const updateRoute = (e: any) => {
@@ -16,11 +18,21 @@ export default function Home() {
                 array[1] = e.target.value;
             }
 
-            let newRoute = array[0] + "--" + array[1];
+            let newRoute = array[0] + "--" + array[1] + "--" + array[2];
             console.log(newRoute);
             return newRoute;
         });
     };
+
+    useEffect(() => {
+        setRoute((oldRoute) => {
+            let array = oldRoute.split("--");
+            array[2] = enabled ? "dark" : "light";
+            let newRoute = array[0] + "--" + array[1] + "--" + array[2];
+            console.log(newRoute);
+            return newRoute;
+        });
+    }, [enabled]);
 
     return (
         <>
@@ -50,6 +62,33 @@ export default function Home() {
                         placeholder="Event Name Here..."
                         onChange={updateRoute}
                     />
+                </div>
+                <div>
+                    <p className="underline font-bold text-[#DBDBDB] text-xl pb-2">
+                        Toggle Dark Mode:{" "}
+                    </p>
+                    <Switch
+                        checked={enabled}
+                        onChange={setEnabled}
+                        className={`${
+                            enabled ? "bg-[#131313]" : "bg-[#DBDBDB]"
+                        } 
+                                    relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-white 
+                                    transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white 
+                                    focus-visible:ring-opacity-75`}
+                    >
+                        <span className="sr-only">Toggle Dark Mode</span>
+                        <span
+                            aria-hidden="true"
+                            className={`${
+                                enabled
+                                    ? "translate-x-9 bg-[#DBDBDB]"
+                                    : "translate-x-0 bg-[#131313]"
+                            }
+                                        pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full bg-white shadow-lg 
+                                        ring-0 transition duration-200 ease-in-out`}
+                        />
+                    </Switch>
                 </div>
                 <button
                     className="bg-[#DBDBDB] text-[#131313] rounded-lg w-48 h-8 px-2 font-bold cursor-pointer text-xl"
