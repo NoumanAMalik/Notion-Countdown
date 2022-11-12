@@ -20,7 +20,11 @@ export default function DatePage({
     const seconds = Math.floor(totalSeconds % 60);
 
     return (
-        <div className="flex flex-col items-center h-full justify-center font-bold text-2xl text-white">
+        <div
+            className={`${
+                routeArray[2] === "dark" ? "text-white" : "text-black"
+            }flex flex-col items-center h-full justify-center font-bold text-2xl`}
+        >
             <p>{routeArray[1]}</p>
             <p className="font-medium">
                 {days}d {hours}h {minutes}m {seconds}s
