@@ -93,7 +93,9 @@ export default function Home() {
                 <button
                     className="bg-[#DBDBDB] text-[#131313] rounded-lg w-48 h-8 px-2 font-bold cursor-pointer text-xl"
                     onClick={(e) => {
-                        r.push(`/date/${route}`);
+                        navigator.clipboard.writeText(
+                            location.href + `/date/${route}`
+                        );
                     }}
                 >
                     Submit Date
