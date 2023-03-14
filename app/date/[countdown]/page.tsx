@@ -8,7 +8,7 @@ export default function DatePage({
 }) {
     const [currentDate, setCurrentDate] = useState({ one: new Date() });
 
-    const countdown = params.countdown;ß
+    const countdown = params.countdown;
     console.log(countdown);
 
     const routeArray = String(countdown).split("--");
