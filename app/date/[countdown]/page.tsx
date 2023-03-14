@@ -1,20 +1,34 @@
 "use client";
+import { useEffect, useState } from "react";
 
 export default function DatePage({
     params,
 }: {
     params: { countdown: string };
 }) {
-    const countdown = params.countdown;
+    const [currentDate, setCurrentDate] = useState({ one: new Date() });
+
+    const countdown = params.countdown;ß
     console.log(countdown);
 
     const routeArray = String(countdown).split("--");
     console.log(routeArray[2]);
 
     const endDate = new Date(routeArray[0] + "T00:00:00");
-    const currentDate = new Date();
+ 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentDate({one: new Date()})
+        }, 1000);
 
-    const totalSeconds = (endDate.getTime() - currentDate.getTime()) / 1000;
+        return () => clearInterval(interval)
+    }, []);
+
+    const totalSeconds = (endDate.getTime() - currentDate.one.getTime()) / 1000;
+
+    if (totalSeconds < 0) {
+        totalSeconds = 0;
+    }
 
     const days = Math.floor(totalSeconds / 3600 / 24);
     const hours = Math.floor(totalSeconds / 3600) % 24;
