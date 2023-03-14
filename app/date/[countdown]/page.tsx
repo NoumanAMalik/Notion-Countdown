@@ -24,7 +24,7 @@ export default function DatePage({
         return () => clearInterval(interval)
     }, []);
 
-    const totalSeconds = (endDate.getTime() - currentDate.one.getTime()) / 1000;
+    let totalSeconds = (endDate.getTime() - currentDate.one.getTime()) / 1000;
 
     if (totalSeconds < 0) {
         totalSeconds = 0;
